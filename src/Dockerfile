@@ -1,5 +1,5 @@
 # Етап 1: Збірка проєкту за допомогою Gradle
-FROM gradle:8.5-jdk25 AS build
+FROM gradle:9.4.1-jdk25 AS build
 WORKDIR /app
 # Копіюємо всі файли проєкту
 COPY . .
