@@ -9,6 +9,7 @@ RUN chmod +x ./gradlew
 # Збираємо .jar файл, пропускаючи тести (щоб уникнути помилок через відсутність БД на етапі збірки)
 RUN ./gradlew build -x test
 
+RUN rm -f build/libs/*-plain.jar
 # Етап 2: Легковаговий контейнер для запуску
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
