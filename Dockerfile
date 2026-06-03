@@ -3,6 +3,9 @@ FROM gradle:9.4.1-jdk25 AS build
 WORKDIR /app
 # Копіюємо всі файли проєкту
 COPY . .
+
+RUN chmod +x ./gradlew
+
 # Збираємо .jar файл, пропускаючи тести (щоб уникнути помилок через відсутність БД на етапі збірки)
 RUN ./gradlew build -x test
 
